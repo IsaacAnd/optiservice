@@ -3,6 +3,11 @@
   "private": true,
   "version": "1.0.0",
   "description": "Sistema de Gestão e Ordens de Serviço para a Assistência Técnica Simplitech",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IsaacAnd/optiservice.git"
+  },
+  "homepage": "https://github.com/IsaacAnd/optiservice#readme",
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",

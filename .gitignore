@@ -9,5 +9,5 @@ coverage/
 metadata.json
 firebase-applet-config.json
 firebase-blueprint.json
-bun.lock
+public/*.zip
 

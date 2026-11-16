@@ -94,20 +94,20 @@ O **OptiService** foi concebido para atender às demandas diárias de uma oficin
 ## 🚀 Como Executar o Projeto Localmente
 
 ### Pré-requisitos
-* [Node.js](https://nodejs.org/) versão 18 ou superior instalada.
+* [Node.js](https://nodejs.org/) versão 22.12 ou superior instalada.
 * Gerenciador de pacotes `npm` ou `yarn`.
 
 ### Passo a Passo
 
 1. **Clonar o Repositório:**
    ```bash
-   git clone https://github.com/SEU_USUARIO/optiservice-simplitech.git
-   cd optiservice-simplitech
+   git clone https://github.com/IsaacAnd/optiservice.git
+   cd optiservice
    ```
 
 2. **Instalar as Dependências:**
    ```bash
-   npm install
+   bun install --frozen-lockfile
    ```
 
 3. **Configuração de Variáveis de Ambiente (Opcional):**
@@ -144,3 +144,6 @@ O **OptiService** foi concebido para atender às demandas diárias de uma oficin
 
 Este projeto é desenvolvido para fins corporativos e acadêmicos da **Simplitech Assistência Técnica**.
 Todos os direitos reservados.
+
+## RP7
+Consulte [documentação atualizada](docs/RP7.md) e [CI/CD](docs/CI_CD.md). O pipeline publica somente o frontend; Firebase permanece como serviço externo.

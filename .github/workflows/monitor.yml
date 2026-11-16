@@ -1,0 +1,13 @@
+name: Monitoramento HTTP
+on:
+  schedule:
+    - cron: '15 */6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar frontend publicado
+        run: curl --fail --location --retry 3 https://isaacand.github.io/optiservice/ -o /tmp/site.html && grep -q 'OptiService' /tmp/site.html
