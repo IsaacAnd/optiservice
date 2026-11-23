@@ -6,7 +6,7 @@ Esta etapa disponibiliza a aplicação para avaliação da banca, o código-font
 
 - Aplicação: https://isaacand.github.io/optiservice/
 - Repositório: https://github.com/IsaacAnd/optiservice
-- CI/CD: https://github.com/IsaacAnd/optiservice/actions/runs/43983248554
+- CI/CD: https://github.com/IsaacAnd/optiservice/actions/runs/45273235101
 - Monitoramento: https://github.com/IsaacAnd/optiservice/actions/runs/45131703682
 
 ## Evoluções desta etapa
@@ -16,6 +16,7 @@ Esta etapa disponibiliza a aplicação para avaliação da banca, o código-font
 - Dados de seed explicitamente fictícios.
 - Testes automatizados para a serialização CSV e proteção contra fórmulas.
 - CI/CD atualizado para executar testes, lint e build antes da publicação.
+- Dossiê separado de evidências técnicas verificadas para avaliação.
 
 ## Limites e cuidados para avaliação
 
