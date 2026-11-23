@@ -129,6 +129,19 @@ O **OptiService** foi concebido para atender às demandas diárias de uma oficin
    ```
    Os arquivos otimizados serão gerados no diretório `dist/`.
 
+6. **Validar antes da entrega:**
+   ```bash
+   npm run test
+   npm run lint
+   npm run build
+   ```
+
+## 📱 Uso na banca e modo instalável
+
+O OptiService inclui manifesto e service worker para instalação como aplicativo web. Depois de acessar a versão publicada pelo menos uma vez, o navegador mantém recursos já visitados em cache para apoiar uma demonstração com instabilidade de rede. A autenticação e as operações no Firestore continuam dependendo do Firebase e da conectividade.
+
+Para a banca, use uma conta de demonstração previamente criada no Firebase Authentication. O aplicativo não cria contas automaticamente e os dados de exemplo inseridos pelo botão do cabeçalho são explicitamente fictícios.
+
 ---
 
 ## 👥 Modelo de Dados (Cloud Firestore)
@@ -147,3 +160,7 @@ Todos os direitos reservados.
 
 ## RP7
 Consulte [documentação atualizada](docs/RP7.md) e [CI/CD](docs/CI_CD.md). O pipeline publica somente o frontend; Firebase permanece como serviço externo.
+
+## RP8
+
+Os materiais de entrega estão separados em [Tarefa 9](docs/RP8_TAREFA_9.md) e [Tarefa 10](docs/RP8_TAREFA_10.md). Consulte também a [documentação técnica](docs/CI_CD.md) e os diagramas em [docs/DIAGRAMAS_E_ARQUITETURA.md](docs/DIAGRAMAS_E_ARQUITETURA.md).

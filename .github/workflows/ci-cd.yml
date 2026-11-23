@@ -20,6 +20,7 @@ jobs:
           bun-version: 'latest'
       - run: bun install --frozen-lockfile
       - run: bun run lint
+      - run: bun run test
       - run: bun run build
       - run: test -s dist/index.html
       - uses: actions/upload-pages-artifact@v3

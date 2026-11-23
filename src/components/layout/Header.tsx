@@ -90,7 +90,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => setIsConfirmSeedOpen(true)}
               disabled={isSeeding}
               className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded hover:bg-blue-100 transition-colors disabled:opacity-50"
-              title="Preencher com exemplos reais para avaliação acadêmica"
+              title="Preencher com exemplos fictícios para avaliação acadêmica"
             >
               {isSeeding ? (
                 <RefreshCw className="w-3.5 h-3.5 animate-spin" />
@@ -153,7 +153,7 @@ export const Header: React.FC<HeaderProps> = ({
       <ConfirmDialog
         isOpen={isConfirmSeedOpen}
         title="Carregar Dados de Demonstração"
-        message="Deseja carregar registros reais de demonstração (clientes, equipamentos, ordens de serviço e agendamentos) diretamente no Cloud Firestore? Isso facilitará testes e avaliação acadêmica imediata."
+        message="Deseja carregar registros explicitamente fictícios de demonstração (clientes, equipamentos, ordens de serviço e agendamentos) no Cloud Firestore? Use-os apenas para avaliação acadêmica."
         confirmLabel="Sim, Carregar Dados"
         isDestructive={false}
         onConfirm={handleExecuteSeed}

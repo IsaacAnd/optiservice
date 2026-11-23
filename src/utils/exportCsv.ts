@@ -1,19 +1,10 @@
-/**
- * Utility to export data arrays to CSV with UTF-8 BOM for Microsoft Excel compatibility
- */
+/** Utility to export data arrays to CSV with UTF-8 BOM for Microsoft Excel compatibility. */
+import { serializeCsv } from './csvCore.mjs';
 
-function escapeCsvField(field: unknown): string {
-  if (field === null || field === undefined) return '""';
-  const raw = String(field);
-  const str = typeof field === 'string' && /^[\s]*[=+@-]/.test(raw) ? "'" + raw : raw;
-  return `"${str.replace(/"/g, '""')}"`;
-}
+export { escapeCsvField, serializeCsv } from './csvCore.mjs';
 
 export function exportToCsv(filename: string, headers: string[], rows: (string | number | boolean | null | undefined)[][]): void {
-  const csvContent = [
-    headers.map(escapeCsvField).join(';'),
-    ...rows.map((row) => row.map(escapeCsvField).join(';')),
-  ].join('\r\n');
+  const csvContent = serializeCsv(headers, rows);
 
   // UTF-8 BOM (\uFEFF) ensures Excel correctly recognizes UTF-8 (accents like ç, ã, é)
   const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });

@@ -4,7 +4,6 @@ import {
   onAuthStateChanged,
   signInWithPopup,
   signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
   signOut,
 } from 'firebase/auth';
 import { auth, googleProvider } from '../lib/firebase';
@@ -15,7 +14,6 @@ interface AuthContextType {
   error: string | null;
   signInWithGoogle: () => Promise<void>;
   signInWithEmail: (email: string, pass: string) => Promise<void>;
-  signUpWithEmail: (email: string, pass: string) => Promise<void>;
   logout: () => Promise<void>;
   clearError: () => void;
 }
@@ -68,18 +66,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const signUpWithEmail = async (email: string, pass: string) => {
-    setError(null);
-    try {
-      await createUserWithEmailAndPassword(auth, email, pass);
-    } catch (err: unknown) {
-      console.error('Erro no cadastro E-mail/Senha:', err);
-      const message = err instanceof Error ? err.message : 'Falha ao registrar novo usuário.';
-      setError(message);
-      throw err;
-    }
-  };
-
   const logout = async () => {
     setError(null);
     try {
@@ -100,7 +86,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         error,
         signInWithGoogle,
         signInWithEmail,
-        signUpWithEmail,
         logout,
         clearError,
       }}

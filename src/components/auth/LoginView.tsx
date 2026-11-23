@@ -3,10 +3,9 @@ import { Wrench, Shield, Lock, Mail, AlertCircle, CheckCircle2 } from 'lucide-re
 import { useAuth } from '../../context/AuthContext';
 
 export const LoginView: React.FC = () => {
-  const { signInWithGoogle, signInWithEmail, signUpWithEmail, error, clearError } = useAuth();
+  const { signInWithGoogle, signInWithEmail, error, clearError } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isRegisterMode, setIsRegisterMode] = useState(false);
   const [loading, setLoading] = useState(false);
   const [localError, setLocalError] = useState<string | null>(null);
 
@@ -39,46 +38,15 @@ export const LoginView: React.FC = () => {
     setLocalError(null);
     clearError();
     try {
-      if (isRegisterMode) {
-        await signUpWithEmail(email, password);
-      } else {
-        await signInWithEmail(email, password);
-      }
+      await signInWithEmail(email, password);
     } catch (err: unknown) {
       const msg =
         err instanceof Error
           ? err.message.includes('auth/invalid-credential')
             ? 'Credenciais incorretas ou usuário não encontrado.'
-            : err.message.includes('auth/email-already-in-use')
-            ? 'Este e-mail já está registrado no sistema.'
             : err.message
           : 'Erro ao autenticar usuário.';
       setLocalError(msg);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleDemoAccess = async () => {
-    setLoading(true);
-    setLocalError(null);
-    clearError();
-    const demoEmail = 'operador.demo@simplitech.com.br';
-    const demoPass = 'simplitech2026';
-    try {
-      await signInWithEmail(demoEmail, demoPass);
-    } catch (err: unknown) {
-      // Se não existir, tenta registrar
-      try {
-        await signUpWithEmail(demoEmail, demoPass);
-      } catch (innerErr: unknown) {
-        // Se já existia ou deu erro, tenta sign in novamente
-        try {
-          await signInWithEmail(demoEmail, demoPass);
-        } catch {
-          setLocalError('Não foi possível autenticar o acesso demo. Utilize sua conta Google ou crie um usuário corporativo abaixo.');
-        }
-      }
     } finally {
       setLoading(false);
     }
@@ -138,17 +106,6 @@ export const LoginView: React.FC = () => {
               <span>{loading ? 'Conectando...' : 'Entrar com Conta Google'}</span>
             </button>
 
-            <button
-              type="button"
-              onClick={handleDemoAccess}
-              disabled={loading}
-              className="w-full flex items-center justify-center gap-2 py-2 px-4 border border-blue-200 bg-blue-50/80 rounded text-xs font-semibold text-blue-800 hover:bg-blue-100 transition-colors shadow-2xs disabled:opacity-60"
-              title="Acessar o sistema como técnico de demonstração sem popups"
-            >
-              <Wrench className="w-3.5 h-3.5 text-blue-600" />
-              <span>Acesso Rápido de Avaliação (1 Clique)</span>
-            </button>
-
             <div className="relative my-4">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-200" />
@@ -203,25 +160,9 @@ export const LoginView: React.FC = () => {
               >
                 {loading
                   ? 'Processando...'
-                  : isRegisterMode
-                  ? 'Registrar Novo Operador'
                   : 'Entrar no Sistema'}
               </button>
 
-              <div className="text-center pt-1">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setIsRegisterMode(!isRegisterMode);
-                    setLocalError(null);
-                  }}
-                  className="text-xs text-blue-700 hover:underline font-medium"
-                >
-                  {isRegisterMode
-                    ? 'Já possui conta? Clique para entrar'
-                    : 'Não possui usuário? Clique para cadastrar'}
-                </button>
-              </div>
             </form>
           </div>
 
@@ -241,7 +182,7 @@ export const LoginView: React.FC = () => {
         <div className="mt-4 text-center text-xs text-gray-500">
           <p>Simplitech Assistência Técnica &bull; Sistema OptiService</p>
           <p className="text-[11px] text-gray-400 mt-0.5">
-            Ambiente acadêmico integrado à nuvem Google Cloud / Firebase
+            Ambiente acadêmico: utilize uma conta de demonstração previamente autorizada
           </p>
         </div>
       </div>

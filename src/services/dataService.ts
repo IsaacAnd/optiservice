@@ -277,38 +277,38 @@ export async function deleteAppointment(id: string): Promise<void> {
 
 // Seed para projetos acadêmicos e demonstração funcional inicial
 export async function seedAcademicDemoData(): Promise<void> {
-  // Cria clientes de teste representativos
+  // Cria dados explicitamente fictícios para demonstração acadêmica.
   const client1Id = await addClient({
-    name: 'Carlos Eduardo Mendes',
-    email: 'carlos.mendes@email.com',
-    phone: '(11) 98765-4321',
-    document: '123.456.789-00',
-    address: 'Av. Paulista, 1000 - Bela Vista, São Paulo - SP',
-    notes: 'Cliente corporativo recorrente. Priorizar atendimentos.',
+    name: 'Cliente Demonstração Alfa',
+    email: 'alfa@example.test',
+    phone: '(00) 00000-0001',
+    document: '000.000.000-01',
+    address: 'Rua Exemplo, 100 - Cidade Fictícia - ST',
+    notes: 'Registro fictício para avaliação acadêmica.',
   });
 
   const client2Id = await addClient({
-    name: 'Mariana Silva Ribeiro',
-    email: 'mariana.ribeiro@empresa.com.br',
-    phone: '(11) 97123-9988',
-    document: '321.654.987-11',
-    address: 'Rua das Flores, 45 - Pinheiros, São Paulo - SP',
-    notes: 'Solicitou contato preferencialmente no período da tarde.',
+    name: 'Cliente Demonstração Beta',
+    email: 'beta@example.test',
+    phone: '(00) 00000-0002',
+    document: '000.000.000-02',
+    address: 'Avenida Modelo, 200 - Cidade Fictícia - ST',
+    notes: 'Registro fictício para avaliação acadêmica.',
   });
 
   const client3Id = await addClient({
-    name: 'TechLog Soluções Logísticas ME',
-    email: 'contato@techlog.com.br',
-    phone: '(11) 3456-7890',
-    document: '12.345.678/0001-90',
-    address: 'Rua Vergueiro, 2500 - Vila Mariana, São Paulo - SP',
-    notes: 'Contrato corporativo para manutenção de computadores do escritório.',
+    name: 'Empresa Demonstração Gama Ltda.',
+    email: 'gama@example.test',
+    phone: '(00) 0000-0003',
+    document: '00.000.000/0001-03',
+    address: 'Alameda Protótipo, 300 - Cidade Fictícia - ST',
+    notes: 'Empresa fictícia criada somente para demonstração.',
   });
 
   // Equipamentos vinculados
   const eq1Id = await addEquipment({
     clientId: client1Id,
-    clientName: 'Carlos Eduardo Mendes',
+    clientName: 'Cliente Demonstração Alfa',
     type: 'Notebook',
     brand: 'Dell',
     model: 'Latitude 3420',
@@ -318,7 +318,7 @@ export async function seedAcademicDemoData(): Promise<void> {
 
   const eq2Id = await addEquipment({
     clientId: client2Id,
-    clientName: 'Mariana Silva Ribeiro',
+    clientName: 'Cliente Demonstração Beta',
     type: 'Desktop',
     brand: 'Lenovo',
     model: 'ThinkCentre M720s',
@@ -328,7 +328,7 @@ export async function seedAcademicDemoData(): Promise<void> {
 
   const eq3Id = await addEquipment({
     clientId: client3Id,
-    clientName: 'TechLog Soluções Logísticas ME',
+    clientName: 'Empresa Demonstração Gama Ltda.',
     type: 'Impressora',
     brand: 'HP',
     model: 'LaserJet Pro M404dn',
@@ -338,7 +338,7 @@ export async function seedAcademicDemoData(): Promise<void> {
 
   const eq4Id = await addEquipment({
     clientId: client1Id,
-    clientName: 'Carlos Eduardo Mendes',
+    clientName: 'Cliente Demonstração Alfa',
     type: 'Smartphone',
     brand: 'Samsung',
     model: 'Galaxy S22',
@@ -350,7 +350,7 @@ export async function seedAcademicDemoData(): Promise<void> {
   await addService({
     serviceCode: 'OS-2026-001',
     clientId: client1Id,
-    clientName: 'Carlos Eduardo Mendes',
+    clientName: 'Cliente Demonstração Alfa',
     equipmentId: eq1Id,
     equipmentSummary: 'Dell Latitude 3420 (DL3420-9981-BR)',
     status: 'Em execução',
@@ -360,7 +360,7 @@ export async function seedAcademicDemoData(): Promise<void> {
     laborCost: 150.0,
     partsCost: 35.0,
     totalCost: 185.0,
-    technicianName: 'Rafael Silva',
+    technicianName: 'Técnico Demonstração',
     priority: 'Alta',
     scheduledDate: '2026-10-18',
   });
@@ -368,7 +368,7 @@ export async function seedAcademicDemoData(): Promise<void> {
   await addService({
     serviceCode: 'OS-2026-002',
     clientId: client2Id,
-    clientName: 'Mariana Silva Ribeiro',
+    clientName: 'Cliente Demonstração Beta',
     equipmentId: eq2Id,
     equipmentSummary: 'Lenovo ThinkCentre M720s (TC-720-4412)',
     status: 'Aguardando peça',
@@ -378,7 +378,7 @@ export async function seedAcademicDemoData(): Promise<void> {
     laborCost: 180.0,
     partsCost: 320.0,
     totalCost: 500.0,
-    technicianName: 'Lucas Oliveira',
+    technicianName: 'Técnico Demonstração',
     priority: 'Urgente',
     scheduledDate: '2026-10-20',
   });
@@ -386,7 +386,7 @@ export async function seedAcademicDemoData(): Promise<void> {
   await addService({
     serviceCode: 'OS-2026-003',
     clientId: client3Id,
-    clientName: 'TechLog Soluções Logísticas ME',
+    clientName: 'Empresa Demonstração Gama Ltda.',
     equipmentId: eq3Id,
     equipmentSummary: 'HP LaserJet Pro M404dn (HPLJ-2024-551)',
     status: 'Solicitado',
@@ -402,7 +402,7 @@ export async function seedAcademicDemoData(): Promise<void> {
   await addService({
     serviceCode: 'OS-2026-004',
     clientId: client1Id,
-    clientName: 'Carlos Eduardo Mendes',
+    clientName: 'Cliente Demonstração Alfa',
     equipmentId: eq4Id,
     equipmentSummary: 'Samsung Galaxy S22 (SM-S901B-776)',
     status: 'Concluído',
@@ -412,7 +412,7 @@ export async function seedAcademicDemoData(): Promise<void> {
     laborCost: 120.0,
     partsCost: 210.0,
     totalCost: 330.0,
-    technicianName: 'Rafael Silva',
+    technicianName: 'Técnico Demonstração',
     priority: 'Média',
     scheduledDate: '2026-10-14',
   });
@@ -420,7 +420,7 @@ export async function seedAcademicDemoData(): Promise<void> {
   // Agendamentos
   await addAppointment({
     clientId: client1Id,
-    clientName: 'Carlos Eduardo Mendes',
+    clientName: 'Cliente Demonstração Alfa',
     equipmentId: eq1Id,
     equipmentSummary: 'Dell Latitude 3420',
     scheduledDate: '2026-10-18',
@@ -431,7 +431,7 @@ export async function seedAcademicDemoData(): Promise<void> {
 
   await addAppointment({
     clientId: client2Id,
-    clientName: 'Mariana Silva Ribeiro',
+    clientName: 'Cliente Demonstração Beta',
     equipmentId: eq2Id,
     equipmentSummary: 'Lenovo ThinkCentre M720s',
     scheduledDate: '2026-10-20',

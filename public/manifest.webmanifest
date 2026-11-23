@@ -1,0 +1,14 @@
+{
+  "name": "OptiService - Simplitech",
+  "short_name": "OptiService",
+  "description": "Sistema acadêmico de gestão para assistência técnica.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f172a",
+  "icons": [
+    { "src": "./icons/optiservice.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
