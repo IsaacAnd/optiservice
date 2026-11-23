@@ -18,8 +18,7 @@ O workflow `CI/CD OptiService` executa as mesmas verificações na branch `main`
 
 - [ ] Aplicação publicada aberta e com uma conta de demonstração válida.
 - [ ] Repositório GitHub acessível.
-- [ ] Vídeo acessível por link e com duração máxima de cinco minutos.
-- [ ] PDFs de relatório, requisitos, diagramas, documentação técnica, validação interna, guia da banca e roteiro de vídeo disponíveis.
+- [ ] PDFs de relatório, requisitos, diagramas, documentação técnica, validação interna e guia da banca disponíveis.
 - [ ] Resultado atual de testes, lint e build registrado.
 - [ ] Links do CI/CD e monitoramento incluídos na mensagem de submissão.
 

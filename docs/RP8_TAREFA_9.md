@@ -26,4 +26,4 @@ Esta etapa disponibiliza a aplicação para avaliação da banca, o código-font
 
 ## Material complementar
 
-O vídeo, a apresentação de requisitos e os PDFs de entrega devem ser disponibilizados na pasta compartilhada informada no campo de submissão. Antes da entrega, testar o link em janela anônima e confirmar que o vídeo dura no máximo cinco minutos.
+Os PDFs de entrega devem ser disponibilizados na pasta compartilhada informada no campo de submissão. Antes da entrega, testar o link em janela anônima.
