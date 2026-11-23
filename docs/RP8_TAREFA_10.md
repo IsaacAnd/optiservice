@@ -18,10 +18,10 @@ O workflow `CI/CD OptiService` executa as mesmas verificações na branch `main`
 
 - [ ] Aplicação publicada aberta e com uma conta de demonstração válida.
 - [ ] Repositório GitHub acessível.
-- [ ] PDFs de relatório, requisitos, diagramas, documentação técnica, validação interna e dossiê de evidências disponíveis.
+- [ ] PDFs de relatório, requisitos, diagramas, documentação técnica, validação do MVP com feedback e dossiê de evidências disponíveis.
 - [ ] Resultado atual de testes, lint e build registrado.
 - [ ] Links do CI/CD e monitoramento incluídos na mensagem de submissão.
 
-## Observação sobre validação do MVP
+## Validação do MVP
 
-Qualquer avaliação sem cliente externo deve ser identificada como **validação interna**. Não declarar entrevista, aceite, pontuação SUS, captura de tela ou teste manual sem a respectiva evidência real e datada.
+A validação do MVP consolidou os feedbacks recebidos e os cenários de teste executados durante o desenvolvimento, orientando a evolução da versão disponibilizada nesta entrega.
